@@ -14,7 +14,7 @@
 .header__left {
     display: flex;
     justify-content: space-evenly;
-    padding: 5px 5px;
+    padding: 10px 10px;
 }
 .header__input {
     display: flex;

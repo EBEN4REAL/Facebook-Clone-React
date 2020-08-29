@@ -5,18 +5,27 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import pics from '../../img/Eben.jpg';
+import {useState} from 'react';
 
 const MessageSender =  () =>  {
+    const [input, setInput] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // DB Stuff
+
+        setInput("");
+        setImageUrl("");
     }
     return (
         <div className="messageSender">
             <div className="messageSender__top">
                 <Avatar src={pics} />
                 <form>
-                    <input type="text" placeholder={`What's on your mind`} />
-                    <input type="text" placeholder="image URL (Optional)"  />
+                    <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder={`What's on your mind`} />
+                    <input onChange={(e) => setImageUrl(e.target.value)} value={imageUrl} type="text" placeholder="image URL (Optional)"  />
                     <button onClick={handleSubmit} type="submit">
                         Hidden Submit
                     </button>
