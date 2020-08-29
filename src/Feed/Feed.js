@@ -9,7 +9,9 @@ const Feed =  () =>  {
     const [posts, setPosts] = useState()
 
     useEffect(() => {
-        db.collection('posts').onSnapshot((snapshot) => {
+        db.collection('posts')
+        .orderBy("timestamp", "desc")
+            .onSnapshot((snapshot) => {
             console.log(snapshot.docs);
             const posts = snapshot.docs.map((doc) => {
                 const obj = {
@@ -33,9 +35,10 @@ const Feed =  () =>  {
                     <Post 
                         key={post.data.id}
                         profilePic={post.data.profilePic}
-                        message={post.data.timestamp.timestamp}
+                        message={post.data.message}
                         username={post.data.username}
                         image={post.data.image}
+                        timestamp = {post.data.timestamp}
                     />
                 )) : 
                 null 
