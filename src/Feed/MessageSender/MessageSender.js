@@ -6,8 +6,10 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import pics from '../../img/Eben.jpg';
 import {useState} from 'react';
+import {useStateValue} from '../../StateProvider';
 
 const MessageSender =  () =>  {
+    const [{user}, dispatch] = useStateValue()
     const [input, setInput] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
@@ -22,9 +24,9 @@ const MessageSender =  () =>  {
     return (
         <div className="messageSender">
             <div className="messageSender__top">
-                <Avatar src={pics} />
+                <Avatar src={user.photoURL} />
                 <form>
-                    <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder={`What's on your mind`} />
+                    <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder={`What's on your mind ${user.displayName}`} />
                     <input onChange={(e) => setImageUrl(e.target.value)} value={imageUrl} type="text" placeholder="image URL (Optional)"  />
                     <button onClick={handleSubmit} type="submit">
                         Hidden Submit
