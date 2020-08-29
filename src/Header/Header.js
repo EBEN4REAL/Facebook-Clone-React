@@ -17,34 +17,34 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const Header =  () =>  {
     return (
         <div className="header">
-            <div class="header__left">
+            <div className="header__left">
                 <img src={Logo} />
-                <div class="header__input">
+                <div className="header__input">
                     <SearchIcon />
-                    <input type="text" />
+                    <input type="text" placeholder="Search Facebook"/>
                 </div>
             </div>
-            <div class="header__center">
-                <div class="header__option">
+            <div className="header__center">
+                <div className="header__option header__option--active">
                     <HomeIcon />
                 </div>
-                <div class="header__option">
+                <div className="header__option">
                     <FlagIcon />
                 </div>
-                <div class="header__option">
+                <div className="header__option">
                     <SubscriptionsOutlinedIcon />
                 </div>
-                <div class="header__option">
+                <div className="header__option">
                     <StorefrontOutlinedIcon />
                 </div>
-                <div class="header__option">
+                <div className="header__option">
                     <StorefrontOutlinedIcon />
                 </div>
-                <div class="header__option">
+                <div className="header__option">
                     <SupervisedUserCircleOutlinedIcon />
                 </div>
             </div>
-            <div class="header__right">
+            <div className="header__right">
                 <div className="header__info">
                     <Avatar />
                     <h4>Eben</h4>
