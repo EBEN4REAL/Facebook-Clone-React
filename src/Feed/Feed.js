@@ -21,7 +21,6 @@ const Feed =  () =>  {
                 return obj
             })
             setPosts(posts)
-            console.log(posts);
         })
     }, [posts])
 

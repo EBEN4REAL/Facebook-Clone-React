@@ -8,7 +8,8 @@ import Login from './Login/Login'
 import {useStateValue} from './StateProvider'
 
 function App() {
-  const [{user}, dispatch] = useStateValue()
+  // const user = "kl";
+  const [{user}, dispatch] = useStateValue({name:"Eben"})
   return (
     <div className="app">
       {!user ? (
