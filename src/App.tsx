@@ -10,7 +10,7 @@ import {useEffect} from 'react'
 import {auth} from './firebase';
 import {actionTypes} from './reducer';
 
-function App() {
+const  App: React.FC = () => {
   const [{user}, dispatch] = useStateValue()
   useEffect(() => {
       auth.onAuthStateChanged((user) => {

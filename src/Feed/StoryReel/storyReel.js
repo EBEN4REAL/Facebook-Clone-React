@@ -1,6 +1,6 @@
 import React  from 'react'
 import './storyReel.css';
-import Story from './Story/Story.js'
+import Story from './Story/Story.tsx';
 import pics from '../../img/Eben.jpg';
 
 const StoryReel =  () =>  {
