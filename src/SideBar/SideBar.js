@@ -8,10 +8,15 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useStateValue} from '../StateProvider';
+import firebase from 'firebase';
+import {actionTypes} from '../reducer';
+
 
 const Sidebar =  () =>  {
     const [{user}, dispatch] = useStateValue()
+    
     return (
         <div className="sidebar">
             <SidebarRow src={user.photoURL} title={user.displayName} />
@@ -22,7 +27,7 @@ const Sidebar =  () =>  {
             <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
 
             <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
-            <SidebarRow Icon={ExpandMoreOutlinedIcon}  title="Marketplace"  />
+            <SidebarRow Icon={ExitToAppIcon}  title="Sign Out"  />
         </div>
     )
 }

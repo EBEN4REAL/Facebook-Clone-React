@@ -1,5 +1,7 @@
 import firebase from 'firebase';
 
+firebase.database.enableLogging(true);
+
 const firebaseConfig = {
     apiKey: "AIzaSyCsPOS_mPnRTnk6l0XgBdr3YzsgZDZb_ec",
     authDomain: "facebook-clone-4969b.firebaseapp.com",

@@ -12,7 +12,6 @@ const Feed =  () =>  {
         db.collection('posts')
         .orderBy("timestamp", "desc")
             .onSnapshot((snapshot) => {
-            console.log(snapshot.docs);
             const posts = snapshot.docs.map((doc) => {
                 const obj = {
                     id: doc.id,
@@ -24,15 +23,14 @@ const Feed =  () =>  {
         })
     }, [posts])
 
-    console.log(posts);
     return (
         <div className="feed">
             <StoryReel />
             <MessageSender  />
                 {posts ? 
-                  posts.map(post => (
+                  posts.map((post,index) => (
                     <Post 
-                        key={post.data.id}
+                        key={index}
                         profilePic={post.data.profilePic}
                         message={post.data.message}
                         username={post.data.username}
